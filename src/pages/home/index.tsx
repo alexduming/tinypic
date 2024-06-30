@@ -2,7 +2,7 @@ import { Button, Divider, Dropdown, Flex, Space, Typography } from "antd";
 import style from "./index.module.scss";
 import { observer } from "mobx-react-lite";
 import { Logo } from "@/components/Logo";
-import { MenuOutlined, WeiboOutlined } from "@ant-design/icons";
+import { WeiboOutlined } from "@ant-design/icons";
 import { gstate } from "@/global";
 import { changeLang, langList } from "@/locale";
 import { homeState } from "@/states/home";
@@ -61,12 +61,13 @@ const Header = observer(() => {
           </Flex>
         </Dropdown>
         <Typography.Link
-          className={style.weibo} // 确保类名匹配您的样式
+          className={style.weibo}
           target="_blank"
           href="https://weibo.com/u/1794009892"
         >
-          <WeiboOutlined />
+          <WeiboOutlined style={{ fontSize: 24 }} />
         </Typography.Link>
+
 
         {/* If non-PC is determined, the menu button will be displayed */}
         {!isPC && homeState.list.size > 0 && (
